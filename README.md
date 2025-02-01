@@ -85,6 +85,7 @@ Only perform this if this is the first time you will setup your Git Environment
    - Perform arithmetic operations on the input.
    - Use the math library for more advanced calculations (square root and sine).
    - Display the results in a clear and formatted way.
+   - Handle a potential error (negative input for square root).
 
    **Desired Output:**
    ```bash
@@ -104,6 +105,7 @@ Only perform this if this is the first time you will setup your Git Environment
    - This exercise demonstrates how to combine different programming concepts to build a more functional program.
    - It reinforces the importance of data type conversion (using float() in this case).
    - It shows how to use the math library for more advanced mathematical operations.
+   - It introduces basic error handling (checking for negative input before calculating the square root).
    - It emphasizes the importance of clear and formatted output.
    - It uses f-strings for cleaner and more readable formatting.
 
@@ -157,7 +159,9 @@ print(f"Sine of {user_number:.2f} degrees is: {sine_value:.4f}") # Sine formatte
    8. Discussion (Notable Observations):
       - How does this exercise combine the concepts you've learned in previous exercises?
       - Why is it important to convert the user input to a float?
+      - Explain how the conditional expression (if user_number >= 0 else ...) is used to handle the error when calculating the square root of a negative number.
       - Why is it important to format the output? How do f-strings make formatting easier?
+      - What other error handling techniques could you use? (Hint: try-except blocks)
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
