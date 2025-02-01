@@ -1,4 +1,4 @@
-Enter a number to perform operations on: 25
+Enter a number to perform operations on: 
 Arithmetic Operations:
 User number + 10 = 35.00
 User number - 5  = 20.00
