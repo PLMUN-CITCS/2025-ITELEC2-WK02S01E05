@@ -1,7 +1,7 @@
-# 2025-ITELEC2-WK02S01E04
+# 2025-ITELEC2-WK02S01E05
 Week 02 - Python Variables, Operators and I/O Statements
 
-Exercise # 04 - Utilizing Basic Math Libraries in Python
+Exercise # 05 - Combined Application Exercise in Python
 
 ## **Instructions**
 
@@ -77,103 +77,87 @@ Only perform this if this is the first time you will setup your Git Environment
 
 ### **Step 3: Complete the Assignment**
 
-**Exercise # 04 - Utilizing Basic Math Libraries in Python**
+**Exercise # 05 - Combined Application Exercise in Python**
 
    **Objective:**
-   This exercise aims to introduce you to Python's math module and demonstrate how to use it to perform common mathematical operations, including: 
-   - Calculating the square root of a number.
-   - Obtaining the value of pi (π).
-   - Converting degrees to radians.
-   - Calculating the sine of an angle.
+   This exercise combines the concepts of variables, input/output, arithmetic operators, and the math library to create a more comprehensive program.  You will learn to:
+   - Get numerical input from the user.
+   - Perform arithmetic operations on the input.
+   - Use the math library for more advanced calculations (square root and sine).
+   - Display the results in a clear and formatted way.
 
    **Desired Output:**
    ```bash
-   Square root of 16 is: 4.0
-   Value of pi is: 3.141592653589793
-   Sine of 30 degrees (in radians) is: 0.49999999999999994
-   Cosine of 60 degrees (in radians) is: 0.5000000000000001
-   Tangent of 45 degrees (in radians) is: 0.9999999999999999
-   Exponential of 2 is: 7.38905609893065
-   Logarithm (base e) of 10 is: 2.302585092994046
-   Logarithm (base 10) of 100 is: 2.0
+   Enter a number to perform operations on: 25
+   Arithmetic Operations:
+   User number + 10 = 35.00
+   User number - 5  = 20.00
+   User number * 2  = 50.00
+   User number / 3  = 8.33
+   
+   Math Library Functions:
+   Square root of 25.00 is: 5.00
+   Sine of 25.00 degrees is: 0.4226
    ```
       
    **Notable Observations (to be discussed after completing the exercise):**
-   - The math module provides a wide range of mathematical functions.
-   - You must import the math module before you can use its functions.
-   - The math.sqrt() function calculates the square root of a number.
-   - math.pi is a constant that stores the value of π.
-   - Trigonometric functions (like math.sin(), math.cos(), math.tan()) expect arguments in radians, not degrees. Use math.radians() to convert from degrees to radians.
-   - math.exp() calculates the exponential of a number (e raised to that number).
-   - math.log() calculates the natural logarithm (base e) by default. You can provide a second argument to specify a different base (e.g., base 10).
+   - This exercise demonstrates how to combine different programming concepts to build a more functional program.
+   - It reinforces the importance of data type conversion (using float() in this case).
+   - It shows how to use the math library for more advanced mathematical operations.
+   - It emphasizes the importance of clear and formatted output.
+   - It uses f-strings for cleaner and more readable formatting.
 
    **Step-by-Step Instructions:**
 
    1. Setting up: Open your preferred Python environment or Text Editor, and create a Python Script.
-      - Required Filename: `exercise_04.py`
+      - Required Filename: `exercise_05.py`
       
-   2.  Import the math module:
-      - Use the import statement to import the math module. This makes the functions and constants within the math module available to your code.
+   2.  Get numerical input:
+      - Use the input() function to prompt the user to enter a number. Store the input in a variable named user_number.
+      - Crucially, convert the input string to a float using the float() function. This allows you to work with decimal numbers.
 ```python
-import math
+user_number = float(input("Enter a number to perform operations on: "))
 ```
       
-   3.  Calculate the square root:
-      - Choose a number (e.g., 16) and store it in a variable.
-      - Use the math.sqrt() function to calculate the square root of the number. Store the result in a variable.
+   3.  Perform arithmetic operations:
+      - Perform addition, subtraction, multiplication, and division operations on user_number. Store the results in appropriately named variables (e.g., addition, subtraction, multiplication, division).
 ```python
-number = 16
-sqrt_result = math.sqrt(number)
+addition = user_number + 10
+subtraction = user_number - 5
+multiplication = user_number * 2
+division = user_number / 3
 ```
 
-   4. Get the value of pi:
-      - Access the math.pi constant to get the value of π. Store it in a variable.
+   4. Use math library functions:
+      - Import the math module if you haven't already done so at the top of your file.
+      - Calculate the square root of user_number. However, check if user_number is negative. The square root of a negative number is undefined in the real number system. If it's negative, store an appropriate message (e.g., "Undefined for negative numbers") in the sqrt_value variable. Otherwise, calculate and store the square root.
+      - Calculate the sine of user_number. Assume the user is entering the angle in degrees. Use math.radians() to convert it to radians before using math.sin().
 ```python
-pi_value = math.pi
+import math # Import math module (only need to do this once at the top in a real script)
+sqrt_value = math.sqrt(user_number) if user_number >= 0 else "Undefined for negative numbers"
+sine_value = math.sin(math.radians(user_number))  # Assuming user enters an angle in degrees
 ```
 
-   5. Calculate the sine of an angle:
-      - Use the math.radians() function to convert the angle from degrees to radians. Store the result in a variable.
-      - Use the math.sin() function to calculate the sine of the angle (in radians). Store the result in a variable.
+   5. Display the results with formatted output (using f-strings):
+      - Use print() and f-strings to display the results of the arithmetic operations and the math functions. Format the output to two decimal places using .2f.
 ```python
-angle_degrees = 30
-angle_radians = math.radians(angle_degrees)
-sin_result = math.sin(angle_radians)
+print("\nArithmetic Operations:")
+print(f"User number + 10 = {addition:.2f}")
+print(f"User number - 5  = {subtraction:.2f}")
+print(f"User number * 2  = {multiplication:.2f}")
+print(f"User number / 3  = {division:.2f}")
+
+print("\nMath Library Functions:")
+print(f"Square root of {user_number:.2f} is: {sqrt_value}")
+print(f"Sine of {user_number:.2f} degrees is: {sine_value:.4f}") # Sine formatted to 4 decimal places
 ```
 
-   6. Calculate the cosine and tangent of an angle:
-      - Use math.cos() and math.tan() to calculate the cosine and tangent of the same angle (in radians). Store the results in variables.
-```python
-cos_result = math.cos(angle_radians)
-tan_result = math.tan(angle_radians)
-```
-         
-   7. Calculate the exponential and logarithms:
-      - Use math.exp() to calculate the exponential of a number (e.g., 2). Store the result in a variable.
-      - Use math.log() to calculate the natural logarithm (base e) of a number (e.g., 10). Store the result in a variable.
-      - Use math.log(x, base) to calculate the logarithm of x with a specified base (e.g., base 10 of 100). Store the result in a variable.
-```python
-exp_result = math.exp(2)
-log_result = math.log(10)  # Natural log (base e)
-log10_result = math.log(100, 10) # Log base 10
-```
-         
-   8. Display the results:
-      - Use the print() function to display the results of all the calculations with descriptive labels.
-```python
-print("Square root of", number, "is:", sqrt_result)
-print("Value of pi is:", pi_value)
-print("Sine of 30 degrees (in radians) is:", sin_result)
-print("Cosine of 60 degrees (in radians) is:", cos_result)
-print("Tangent of 45 degrees (in radians) is:", tan_result)
-print("Exponential of 2 is:", exp_result)
-print("Logarithm (base e) of 10 is:", log_result)
-print("Logarithm (base 10) of 100 is:", log10_result)
-```
-
-   9. Run the code: Execute your Python code.
-   10. Observe the output: Compare your output with the "Desired Output" shown above.
-   11. Discussion (Notable Observations): Discuss all the points in the "Notable Observations" section.  Why is it important to convert degrees to radians before using trigonometric functions?  What other functions are available in the math module?  (Encourage students to explore the documentation.)
+   6. Run the code: Execute your Python code.
+   7. Observe the output: Compare your output with the "Desired Output" shown above.
+   8. Discussion (Notable Observations):
+      - How does this exercise combine the concepts you've learned in previous exercises?
+      - Why is it important to convert the user input to a float?
+      - Why is it important to format the output? How do f-strings make formatting easier?
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
