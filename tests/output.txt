@@ -6,5 +6,5 @@ User number * 2  = 50.00
 User number / 3  = 8.33
 
 Math Library Functions:
-Square root of 25.00 is: 5.00
+Square root of 25.00 is: 5.0
 Sine of 25.00 degrees is: 0.4226
