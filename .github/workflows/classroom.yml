@@ -15,27 +15,27 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pylint
-    - name: File Existence Check - exercise_04.py
+    - name: File Existence Check - exercise_05.py
       id: file-existence-check
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: File Existence Check - exercise_04.py
-        command: "test -f exercise_04.py"
+        test-name: File Existence Check - exercise_05.py
+        command: "test -f exercise_05.py"
         timeout: 10
         max-score: 10
-    - name: Syntax Check - exercise_04.py
+    - name: Syntax Check - exercise_05.py
       id: syntax-check
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: Syntax Check - exercise_04.py
-        command: "pylint exercise_04.py --disable=C"
+        test-name: Syntax Check - exercise_05.py
+        command: "pylint exercise_05.py --disable=C"
         timeout: 10
         max-score: 30
-    - name: Run Check - exercise_04.py
+    - name: Run Check - exercise_05.py
       id: logic-check
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: Run Check - exercise_04.py
+        test-name: Run Check - exercise_05.py
         setup-command: "chmod +x ./run_tests.sh"
         command: "./run_tests.sh"
         timeout: 10
