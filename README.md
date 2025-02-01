@@ -89,15 +89,15 @@ Only perform this if this is the first time you will setup your Git Environment
 
    **Desired Output:**
    ```bash
-   Enter a number to perform operations on: 25
+   Enter a number to perform operations on: 
    Arithmetic Operations:
    User number + 10 = 35.00
    User number - 5  = 20.00
    User number * 2  = 50.00
    User number / 3  = 8.33
-   
+
    Math Library Functions:
-   Square root of 25.00 is: 5.00
+   Square root of 25.00 is: 5.0
    Sine of 25.00 degrees is: 0.4226
    ```
       
